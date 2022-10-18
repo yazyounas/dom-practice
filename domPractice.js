@@ -28,3 +28,19 @@ const newAttraction = document.createElement('li');
 newAttraction.id = 'vespa';
 newAttraction.innerHTML = 'Rent a Vespa';
 document.getElementById('italy-attractions').appendChild(newAttraction);
+
+//Remove an Element it will remove the first child of an element
+let elementToRemove = document.getElementById('vespa');
+document.getElementById('italy-attractions').removeChild(elementToRemove);
+
+//Add Click Interactivity onclick event 
+let element = document.querySelector('button');
+
+function turnButtonRed(){
+  // Add code to turn button red
+  element.style.backgroundColor = 'red';
+  element.style.color = 'white';
+  element.innerHTML = 'Red Button';
+
+}
+element.onclick = turnButtonRed;

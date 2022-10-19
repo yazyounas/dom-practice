@@ -72,3 +72,63 @@ function textReturn() {
 view.onclick = textChange;
 //textReturn as an event handler function to a click event fired on the close variable.
 close.onclick = textReturn;
+
+
+//Removing Event Handlers
+let fortunes = ["A beautiful, smart, and loving person will be coming into your life.",
+  "A fresh start will put you on your way.",
+  "A golden egg of opportunity falls into your lap this month.",
+  "A smile is your personal welcome mat.",
+  "All your hard work will soon pay off."
+]
+
+let button = document.getElementById('fortuneButton');
+let fortune = document.getElementById('fortune');
+
+function fortuneSelector(){
+  let randomFortune = Math.floor(Math.random() * fortunes.length);
+  return fortunes[randomFortune];
+}
+
+function showFortune(){
+  fortune.innerHTML = fortuneSelector();
+  button.innerHTML = "Come back tomorrow!";
+  button.style.cursor = "default";
+
+  //add your code here
+  //add remover Listener inside the function
+button.removeEventListener('click', showFortune);
+}
+//add listener outside the function
+button.addEventListener('click', showFortune);
+//Event Object Properties
+let social = document.getElementById('social-media');
+let share = document.getElementById('share-button');
+let text = document.getElementById('text');
+
+// Write your code below
+//share photo function that target and dsipaly with time stamp
+let sharePhoto = function(event) {
+event.target.style.display = 'none';
+text.innerHTML= event.timeStamp;
+}
+share.addEventListener('click', sharePhoto);
+//Event Types
+// This variable stores the "Pick a Color" button
+let button = document.getElementById('color-button');
+
+// This variable stores the "Mystery Color" button
+let mysteryButton = document.getElementById('next-button');
+
+// This random number function will create color codes for the randomColor variable
+function colorValue() {
+  return Math.floor(Math.random() * 256);
+}
+//event that change random background color
+function colorChange(event){
+  let randomColor = 'rgb(' + colorValue() + ',' + colorValue() + ',' + colorValue() + ')';
+  event.target.style.backgroundColor = randomColor;
+}
+//add Even handler
+button.addEventListener('click', colorChange);
+mysteryButton.addEventListener('wheel', colorChange);

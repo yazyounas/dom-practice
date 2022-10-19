@@ -38,3 +38,37 @@ function showInfo() {
 moreInfo.style.display = 'block';
 }
 readMore.addEventListener('click', showInfo);
+
+
+//event handler function to change text on view and return change 
+let view = document.getElementById('view-button');
+let close = document.getElementById('close-button');
+let codey = document.getElementById('codey');
+
+let open = function() {
+  codey.style.display = 'block';
+  close.style.display = 'block';
+};
+
+let hide = function() {
+  codey.style.display = 'none';
+  close.style.display = 'none';
+};
+
+view.addEventListener('click', open);
+close.addEventListener('click', hide);
+
+// Write your code here
+//create a function named textChange() that changes the text in the view element to 'Hello, World!'.
+
+function textChange() {
+  view.innerHTML ='Hello, World!';
+}
+////create a function named textReturn() that changes the text of the view element variable back to 'View'.
+function textReturn() {
+  view.innerHTML = 'View';
+}
+//Assign textChange event hander function to onlick event
+view.onclick = textChange;
+//textReturn as an event handler function to a click event fired on the close variable.
+close.onclick = textReturn;

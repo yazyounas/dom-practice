@@ -45,3 +45,37 @@ nurseOlynyk.takeVacationDays(5);
 console.log(nurseOlynyk.remainingVacationDays);
 nurseOlynyk.addCertification('Genetics');
 console.log(nurseOlynyk.certifications);
+/*
+class RentalUnit {
+  constructor(address, costPerYear) {
+    this._address = address;
+    this._costPerYear = costPerYear;
+  }
+ 
+  get address() {
+    return this._address;
+  }
+ 
+  get costPerYear() {
+    return this._costPerYear;
+  }
+ 
+  calculateMonthly() {
+    return this.costPerYear / 12; 
+  }
+}
+ 
+class Apartment extends RentalUnit {
+  constructor(address, costPerYear, numberOfBedrooms) {
+    super(address, costPerYear);
+    this._numberOfBedrooms = numberOfBedrooms;
+  }
+ 
+  get numberOfBedrooms() {
+    return this._numberOfBedrooms;
+  }
+}
+
+
+
+*/

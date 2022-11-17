@@ -1,0 +1,35 @@
+class School {
+  constructor(name, level, numberOfStudent) {
+    this._name = name;
+    this._level = level;
+    this._numberOfStudent = numberOfStudent;
+  }
+  get name() {
+   return this._name;
+  }
+   get level() {
+   return this._level;
+  }
+   get numberOfStudent() {
+   return this._numberOfStudent;
+  }
+  quickFacts() {
+    console.log(`${name} educates ${numberOfStudent} at the ${level} school level`)
+
+  }
+  static pickSubstituteTeacher(substituteTeachers) {
+    let myIndex = Math.floor(substituteTeachers.length * Math.random());
+    return substituteTeachers[myIndex];
+
+  }
+  set numberOfStudent(newNumberOfStudent) {
+    if(typeof newNumberOfStudent === number) {
+      this._numberOfStudent = newNumberOfStudent;
+    } else {
+      console.log('Invalid input: numberOfStudents must be set to a Number.')
+    }
+  }
+}
+ca
+
+
